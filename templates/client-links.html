@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+<!---If user searched for client name that matches multiple items in database, print list of options for user to choose from--->
+<div class="w3-container client_info cabin_font">
+  <br><h2>Did you mean?</h2><br>
+    <ul class="list-group list-group-flush links">
+      {% for row in client %}
+        <li class="list-group-item bold"><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.client_name  }} ({{  row.client_id  }})</a></li>
+      {% endfor %}
+    </ul>
+</div>
+{% endblock %}

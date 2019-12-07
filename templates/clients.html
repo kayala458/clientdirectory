@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Clients List
+{% endblock %}
+
+{% block nav_clients %}active{% endblock %}
+
+{% block main %}
+<!---Provides user with full list of clients in database and various client attributes--->
+  <div class="w3-container client_info padding">
+    <h2>Full List of Clients</h2><br>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white fixed_header">
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Institution Type</th>
+                <th>Region</th>
+                <th>Investment Director</th>
+                <th>Estimated Assets (in 000s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+                <tr>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.client_id  }} </a></td>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.client_name  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.institution  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.region  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.director  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= client.client_id)  }}">{{  client.assets | number }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+

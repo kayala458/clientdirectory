@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+<!---Advanced Search--->
+<div class="w3-panel">
+  <br><h2>Advanced Search</h2><br>
+  <form action="/advanced" method="post" action="">
+    <div class="w3-container" id="search">
+      <h5 class="w3-bottombar w3-border-green">By Client Characteristics</h5><br>
+      <div class="form-group">
+        <!---Populate Institution Type dropdown list with all possible options--->
+        <select class="form-control" name="institution">
+          <option disabled="" selected="" value="">Client Institution Type</option>
+          {% for row in institutions %}
+          <option value="{{ row.institution  }}">{{ row.institution }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <!---Populate Region dropdown list with all possible options--->
+      <select class="form-control" name="region">
+        <option disabled="" selected="" value="">Client Region</option>
+        {% for row in region %}
+        <option value="{{ row.region  }}">{{ row.region }}</option>
+        {% endfor %}
+      </select><br>
+      <!---Search for either list of clients or list of users matching items in form--->
+      <div>
+        <input type="submit" class="btn btn-lg btn-primary custom-btn btn-block" data-toggle="tooltip" data-placement="right" title="Results show list of clients that match search criteria." name="action" value="Search Clients"><br>
+        <input type="submit" class="btn btn-lg btn-success custom-btn btn-block" data-toggle="tooltip" data-placement="right" title="Results show list of users that belong to organizations that match search criteria." name="action" value="Search Users"><br><br>
+      </div>
+    </div><br>
+  </form>
+</div>
+{% endblock %}

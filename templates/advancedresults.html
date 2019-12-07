@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+<div class="w3-container padding client_info">
+
+    <!---Populate Header title of page based on what user searched for--->
+    {% if inst and reg %}
+        <h2>{{ institution  }} Client Types Based in {{ region  }}</h2>
+    {% endif %}
+
+    {% if inst and not reg %}
+        <h2>{{ institution  }} Clients </h2>
+    {% endif %}
+
+    {% if reg and not inst%}
+        <h2>Clients based in {{  region  }} </h2>
+    {% endif %}
+
+    <!---Populate table with client attributes--->
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white fixed_header">
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Institution Type</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>Investment Director</th>
+                <th>Estimated Assets (in 000s)</th>
+                <th>Security Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in clients %}
+            <tr>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.client_id }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.client_name  }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.institution  }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.country  }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.region  }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.director  }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.assets | number }}</td>
+                <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.security  }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

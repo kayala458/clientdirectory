@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User List by Application
+{% endblock %}
+
+{% block nav_users %}active{% endblock %}
+
+{% block main %}
+<div class="w3-container padding client_info">
+    <h2>Users with access to {{  application  }}</h2><br>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white fixed_header">
+        <thead>
+            <tr>
+                <th>User's Name</th>
+                <th>User's Email Address</th>
+                <th>Client Organization Name</th>
+                <th>Client ID</th>
+                <th>Institution Type</th>
+                <th>Region</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in users %}
+                <tr >
+                    <td data-toggle="tooltip" data-placement="right" title="Start Date: {{  row.start_date  }}"><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.user_name  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.email  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.client_name  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.client_id  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.institution  }}</a></td>
+                    <td><a href="{{  url_for('linked_client', type= row.client_id)  }}">{{  row.region  }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

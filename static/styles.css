@@ -1,0 +1,279 @@
+/* Header bar and navbar text*/
+@media only screen and (min-width: 440px)
+{
+.top_bar
+  {
+    font-family: "Cabin";
+    font-size: 90%;
+    letter-spacing: 3px;
+    max-height: 50px;
+  }
+}
+
+/* Change text sizing in header at top with zoom and on mobile devices */
+@media only screen and (max-width: 440px)
+{
+.top_bar
+  {
+    font-family: "Cabin";
+    font-size: 50%;
+    letter-spacing: 3px;
+    max-height: 50px;
+  }
+}
+
+/* Header bar image size and padding */
+.top_bar img
+{
+  max-height: 40px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+/* login and search form positioning and size with different screen sizes */
+@media only screen and (min-width: 801px)
+{
+  /* Center login vertically and horizontally */
+  #login
+  {
+    width: 33%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 30%;
+  }
+
+  /* center search forms - search forms take up third of page */
+  #search
+  {
+    margin-left: 33%;
+    margin-right: 33%;
+  }
+}
+
+/* Make hr (page break) invisible on login form */
+.clear
+{
+    clear: both;
+    visibility: hidden;
+}
+
+/* Change Bootstrap button colors on forms */
+.btn-primary
+{
+  background-color: #03aba5;
+  border-color: #03aba5;
+}
+
+/* Change Bootstrap button colors on forms */
+.btn-primary:hover
+{
+  background-color: #03aba5;
+  border-color: #03aba5;
+}
+
+/* Change Bootstrap button colors on forms */
+.btn-success
+{
+  background-color: #57bd2b;
+  border-color: #57bd2b;
+}
+
+/* Change Bootstrap button colors on forms */
+.btn-success:hover
+{
+  background-color: #57bd2b;
+  border-color: #57bd2b;
+}
+
+/* Credit to bootsnipp.com for the css for the color graph seen across all pages */
+.colorgraph {
+  height: 8px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+/* put space above colorgraph */
+#color
+{
+  padding-top: 22px;
+}
+
+/* center and color header text across all pages */
+h2
+{
+  color: slategray;
+  text-align: center;
+}
+
+/* Icon color and position on navbar, registration form, and home/search page*/
+.fa-fw, .w3-xxxlarge, .fa-2x
+{
+  color: slategrey;
+  padding-right: 20px;
+}
+
+/* Menu Icon color when menu is collapsed */
+.fa-bars
+{
+  color: white;
+  padding: none;
+}
+
+/* "Welcome" text size on home page*/
+#welcome
+{
+    font-size: 20px;
+}
+
+/* Change font for links on sidenav and links on client-links.html */
+.cabin_font
+{
+  font-family: "Cabin";
+}
+
+/* Colors link on navbar that user is currently on */
+#active
+{
+ background: #03aba5;
+}
+
+/* Add padding to top of tables */
+.padding
+{
+  padding-top: 20px;
+}
+
+/* Add space to sides of table on clients.html and searchresult.html
+   For larger tables on smaller screens, allow user to scroll horizontally */
+.client_info
+{
+  margin-left: 4%;
+  margin-right: 4%;
+  overflow-x: auto;
+}
+
+/* center links on client-links.html and change font color */
+.links, .links a
+{
+  text-align: center;
+  color: black;
+}
+
+/* change color of links on client-links.html when hovered */
+.links a:hover
+{
+  color: teal;
+}
+
+/* bold text items on tables */
+.bold
+{
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Style the tabs on list of client users (searchresult.html) */
+.tab button
+{
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of tabs on hover (searchresult.html) */
+.tab button:hover
+{
+  background-color: #ddd;
+}
+
+/* Change color of active/current tab (searchresult.html) */
+.tab .active
+{
+  background-color: #ccc;
+}
+
+/* Center text and container of Apology error message. Assign font values */
+.apology
+{
+  width: 50%;
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  font-family: "Cabin";
+  padding-top: 20px;
+}
+
+/* Font style and text spacing on Page Legend */
+.legend
+{
+  font: arial;
+  padding-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Indent first line of text on Page Legend */
+.indent
+{
+    margin-left: 40px;
+}
+
+/* style full span of table row as link to client user list */
+table tbody tr td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+/* table row as links to client user list - remove underline when link is hovered over */
+table tbody tr td a:hover
+{
+  text-decoration: none;
+  color: black;
+}
+
+/* Reduce size of first column on Additional Client Info tab. */
+.addinfo
+{
+  width: 35%;
+}
+
+/* Freeze first row of tables with numerous rows so that column headers remain present as user scrolls down */
+.fixed_header
+{
+  width: 100%;
+  table-layout: auto;
+}
+
+/* Freeze first row of tables with numerous rows so that column headers remain present as user scrolls down */
+.fixed_header tbody
+{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 100vh;
+}
+
+/* Freeze first row of tables with numerous rows so that column headers remain present as user scrolls down */
+.fixed_header thead tr
+{
+  display: table-header-group;
+}
+
+/* Freeze first row of tables with numerous rows so that column headers remain present as user scrolls down */
+.fixed_header th, .fixed_header td
+{
+  width: 100vh;
+}

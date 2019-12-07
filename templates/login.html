@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<!--Login form-->
+<div class="w3-panel" id="login">
+	<hr class="clear"><hr class="clear">
+	<form action="/login" method="post" action="">
+		<hr class="clear"><hr class="clear">
+		<h2>Welcome! Please Log In</h2>
+		<hr class="colorgraph">
+		<!---Prompt user for username--->
+		<div class="form-group">
+            <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username">
+		</div>
+		<!---Prompt user for password--->
+		<div class="form-group">
+            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+		</div>
+		<hr class="colorgraph">
+		<div class="row">
+			<!---Button to log in--->
+			<div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="submit" class="btn btn-lg btn-success custom-btn btn-block" name="action" value="Log In">
+			</div>
+			<!---Button to register--->
+			<div class="col-xs-6 col-sm-6 col-md-6">
+				<button type="button" class="btn btn-lg btn-primary custom-btn btn-block" data-toggle="modal" data-target="#modalRegisterForm">Register</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- Modal Registration Form-->
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    	<div class="modal-header text-center">
+        	<h2 class="modal-title w-100">Registration</h2>
+        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          		<span aria-hidden="true">&times;</span>
+        	</button>
+    	</div>
+    	<form action="/login" method="post" action="">
+	    	<div class="modal-body mx-3">
+	      	<hr class="colorgraph"><br>
+	      		<!---Prompt user for first name--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-user fa-2x"></i>
+					</div>
+					<input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name">
+				</div>
+				<!---Prompt user for last name--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-user fa-2x"></i>
+					</div>
+					<input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Last Name">
+				</div>
+				<!---Prompt user for email--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-envelope-square fa-2x"></i>
+					</div>
+					<input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email">
+				</div>
+				<!---Prompt user for username--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-id-badge fa-2x"></i>
+					</div>
+					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username">
+				</div>
+				<!---Prompt user for password--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-lock fa-2x"></i>
+					</div>
+					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+				</div>
+				<!---Prompt user to confirm password--->
+				<div class="md-form mb-4 input-group">
+		  			<div class="input-group-prepend">
+						<i class="fa fa-unlock-alt fa-2x"></i>
+					</div>
+					<input type="password" name="confirmation" id="confirmation" class="form-control input-lg" placeholder="Confirm Password">
+				</div>
+	        	<hr class="colorgraph">
+	        </div>
+	        <!---Submit button--->
+		    <div class="modal-footer d-flex justify-content-center">
+		    	<input autocomplete="off" type="submit" class="btn btn-lg btn-success btn-block" name="action" value="Register">
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+<!-- Modal Registration Form script-->
+<script> $('#myModal').modal(options)</script>

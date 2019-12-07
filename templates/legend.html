@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Page Legend
+{% endblock %}
+
+{% block nav_legend %}active{% endblock %}
+
+{% block main %}
+<!--Provide user with description of applications that client users may have access to--->
+<div class="w3-container legend">
+    <h2>Client Contact Directory Help</h2>
+    <p class="bold">Learn more about the applications each user may have access to.</p>
+    <ul class="list-group list-group-flush">
+        <!--Website Description--->
+        <li class="list-group-item w3-hover-pale-yellow ">
+            <div class="w3-bar">
+                <span class="w3-large"><b>Website</b></span><br>
+                <span class="text">
+                Users with access to the Cambridge Associates website can log in to cambridgeassociates.com. Upon logging in, they will have access to several additional
+                resources, such as our Insights Library, which is a collection of Cambridge’s regularly published research reports.
+                The most recent publications are displayed on the user's page upong logging in, but the user can also search for specific items.
+                </span>
+            </div>
+        </li>
+        <!--Research Publications Descriptions--->
+        <li class="list-group-item w3-hover-pale-yellow">
+            <div class="w3-bar">
+                <span class="w3-large"><b>CA Answers, CA Insights, and Market Matters</b></span><br>
+                <span>
+                Users with access to these items receive Cambridge Assoicates Research publications via email with regular frequency.
+                    <div class="indent"><br>
+                        <b>CA Answers:</b><br>
+                        Answers to frequently asked client questions about market action and the market environment in a few paragraphs. Delivered twice a month.<br><br>
+                        <b>CA Insights:</b><br>
+                        This publication is distributed each Monday afternoon. The CA Insights announces new research publications since the last email that was sent out to the user.
+                        Research publications include items such as Endowments Quarterly (which shows data on our Endowments and Foundations clients), Hedge Fund Updaets, and Investment Pool Returns.<br><br>
+                        <b>Market Matters:</b><br>
+                        This short piece is intended as a high level overview of the key market moves in the month, with a few topical charts (at quarter end) and a brief look at index performance in major currencies.
+                        Delivered on a monthly basis.
+                    </div>
+                </span>
+            </div>
+        </li>
+        <!--Optica Research Description for both modules--->
+        <li class="list-group-item w3-hover-pale-yellow">
+            <div class="w3-bar">
+                <span class="w3-large"><b>Optica Research - Private and Public Investments</b></span><br>
+                <span>
+                Optica Research is Cambridge’s Global Research offering. With it, our clients can access manager information
+                and Cambridge insights across the Hedge Fund, Long Only and Private Investment asset classes.
+                More specifically, users can access our full Investment and Operational Due Diligence Reports, Commentary from meetings we’ve
+                had with managers and underlying manager-specific data. On the public side that includes performance, Assets Under Management,
+                exposures, and portfolio characteristics and on the private side that includes IRRs, quartiles, multiples, and Cambridge benchmark figures.
+                </span>
+            </div>
+        </li>
+        <!--Optica Benchmarks Description--->
+        <li class="list-group-item w3-hover-pale-yellow">
+            <div class="w3-bar">
+                <span class="w3-large"><b>Optica Benchmarks</b></span><br>
+                <span>
+                Optica Benchmarks is Cambridge Associates’ (CA) private investments benchmarking tool.
+                It is a web-based application that allows users to “slice and dice” across the robust fund and investment-level data in
+                CA’s private performance database.<br><br>
+
+                Optica Benchmarks provides users with the ability to access the official CA Benchmarks and also create customized fund-level benchmarks
+                by filtering on fund asset class geography, vintage year, fund sequence, industry focus, size, IRR range, status, and quartile.
+                </span>
+             </div>
+        </li>
+        <!--Optica Peers Description--->
+        <li class="list-group-item w3-hover-pale-yellow">
+            <div class="w3-bar">
+                <span class="w3-large"><b>Optica Peers</b></span><br>
+                <span>
+                Optica Peers is a web-based application. Within it, users can view a wide range of metrics,
+                including clients’ historic quarterly performance, clients’ asset allocations, and their spending rates.
+                It’s modeled with a “give and take” approach, so if a client agrees to participate and allow us to share their
+                quarterly data…they can in turn log in and see how they compare to other participating peers.<br><br>
+
+                Right now, the only clients who are eligible to participate are US –based institutions.
+                That primarily includes Colleges, Universities, Foundations, Hospitals, Museums, etc.
+                </span>
+             </div>
+        </li>
+        <!--Additional application Description--->
+        <li class="list-group-item w3-hover-pale-yellow">
+            <div class="w3-bar">
+                <span class="w3-large"><b>PIOS and MMOS</b></span><br>
+                <span>
+                These applications are similar to Optica Research in that they provide manager's investment performance. The primary difference is that
+                these applications do not offer the user access to Cambridge Associates' research content on the managers. PIOS, or Private Investment One Stop
+                displays only Private Investment manager data and is akin to Private Investments Optica Research. MMOS, or Marketable Manager One Stop displays only Public
+                Investment manager data and is akin to Public Investments Optica Resarch.
+                </span>
+             </div>
+        </li>
+    </ul><br>
+</div>
+{% endblock %}

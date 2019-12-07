@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Client User List
+{% endblock %}
+
+{% block main %}
+<div class="w3-container padding client_info">
+
+    <!---Populate Header title of page based on what user searched for--->
+    {% if inst and reg %}
+        <h2>Users Associated with {{ institution  }} Clients Based in {{ region  }}</h2>
+    {% endif %}
+
+    {% if inst and not reg %}
+        <h2>Users Associated with {{ institution  }} Clients </h2>
+    {% endif %}
+
+    {% if reg and not inst%}
+        <h2>Users Associated with {{  region  }} Based Clients </h2>
+    {% endif %}
+
+    <!---If user accessed page through Search form on home page, print only client list of users and client's additional information--->
+    {% if simple_search %}
+    <h2>Users at {{  client_name  }}</h2>
+        <div class="tab">
+          <button class="tablinks" onclick="openInfo(event, 'users')" id="defaultOpen">{{  client_name  }} ({{  client_id  }})</button>
+          <button class="tablinks" onclick="openInfo(event, 'client_info')">Additional Client Information</button>
+        </div>
+    {% endif %}
+    <!---Populate list of users and what they have access to--->
+    <div id="users" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright"></span>
+        <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white {% if advanced %}fixed_header{% endif %}">
+            <thead>
+                <tr>
+                    <th>User's Name</th>
+                    <th>Website</th>
+                    <th>CA Answers</th>
+                    <th>CA Insights</th>
+                    <th>Market Matters</th>
+                    <th>Optica Benchmarks</th>
+                    <th>Optica Peers</th>
+                    <th>Optica Research - Private</th>
+                    <th>Optica Research - Public</th>
+                    <th>Private Investment One-Stop</th>
+                    <th>Marketable One-Stop</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in users %}
+                <tr >
+                    <td data-toggle="tooltip" data-placement="right" title="Start Date: {{  row.start_date  }}&#013;Email Address:  {{  row.email  }}">{{  row.user_name  }} </td>
+                    <td class="bold">{{  row.website  }}</td>
+                    <td class="bold">{{  row.answers  }}</td>
+                    <td class="bold">{{  row.insights  }}</td>
+                    <td class="bold">{{  row.market  }}</td>
+                    <td class="bold">{{  row.obm  }}</td>
+                    <td class="bold">{{  row.opd  }}</td>
+                    <td class="bold">{{  row.ors_private  }}</td>
+                    <td class="bold">{{  row.ors_public  }}</td>
+                    <td class="bold">{{  row.pios  }}</td>
+                    <td class="bold">{{  row.mmos  }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!---Client's additional information that only displays if user reached page via Search/Home--->
+{% if simple_search %}
+<div class="w3-container client_info">
+    <div id="client_info" class="tabcontent">
+      <span onclick="this.parentElement.style.display='none'" class="topright"></span>
+        <table class="w3-table w3-border w3-hoverable w3-white">
+            <tbody>
+            {% for row in client %}
+                <tr>
+                    <td class="bold addinfo"> Lead Investment Director </td>
+                    <td> {{  row.director  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> Institution Type </td>
+                    <td> {{  row.institution  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> City </td>
+                    <td> {{  row.city  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> State </td>
+                    <td> {{  row.state  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> Country </td>
+                    <td> {{  row.country  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> Region </td>
+                    <td> {{  row.region  }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> Estimated Asset Amount (in 000s) </td>
+                    <td> {{  row.assets | number }} </td>
+                </tr>
+                <tr>
+                    <td class="bold"> Security Level </td>
+                    <td> {{  row.security  }} </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+<script>
+// Toggle between tabs - used https://www.w3schools.com/howto/howto_js_tabs.asp as reference
+function openInfo(evt, client)
+{
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++)
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++)
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(client).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+{% endblock %}
+

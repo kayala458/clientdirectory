@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block nav_home %}active{% endblock %}
+
+{% block main %}
+<!---Header--->
+<header class="w3-container" style="padding-top:22px">
+  <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+</header>
+
+<!---Dashboard: active users display--->
+<div class="w3-row-padding w3-margin-bottom">
+  <!---# of Active Optice Research Users--->
+  <div class="w3-third">
+    <a href="{{url_for('users', type='research')}}">
+      <div class="w3-container w3-win8-lime w3-padding-16">
+        <div class="w3-left"><i class="fa fa-book w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>{{ ORSusers | number }} Active Users</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Optica Research</h4>
+      </div>
+    </a>
+  </div>
+  <!---# of Active Optice Benchmarks Users--->
+  <div class="w3-third">
+    <a href="{{url_for('users', type='obm')}}">
+      <div class="w3-container w3-win8-green w3-padding-16">
+        <div class="w3-left"><i class="fa fa-line-chart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>{{ OBMusers | number }} Active Users</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Optica Benchmarks</h4>
+      </div>
+    </a>
+  </div>
+  <!---# of Active Optice Peers Users--->
+  <div class="w3-third">
+    <a href="{{url_for('users', type='opd')}}">
+      <div class="w3-container w3-win8-teal w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-group w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>{{ OPDusers | number }} Active Users</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Optica Peers</h4>
+      </div>
+    </a>
+  </div>
+</div>
+<br><hr>
+
+<!---Simple Search for clients-->
+<div class="w3-panel" id="search">
+  <br><h2>Search Clients</h2><br>
+  <form action="/" method="post" action="">
+    <div class="w3-container">
+      <h5 class="w3-bottombar w3-border-lime">By Client Name or Code</h5>
+      <!---Prompt user for client name--->
+      <div class="form-group">
+        <input autocomplete="off" type="text" name="client_name" id="client_name" class="form-control input-lg" placeholder="Client Name">
+    	</div>
+    	<!---Prompt user for client ID--->
+    	<div class="form-group">
+        <input type="number" name="client_id" id="client_id" class="form-control input-lg" placeholder="Client ID">
+    	</div>
+    	<!---Submit/Search button--->
+    	<div>
+        <input type="submit" class="btn btn-lg btn-success custom-btn btn-block" name="action" value="Search"><br><br>
+      </div>
+    </div>
+  </form>
+</div>
+<hr>
+{% endblock %}
+
