@@ -37,8 +37,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///directory.db")
 
-app.secret_key = 'asdjfklajsfd'
-
 
 @app.route("/login", methods=["GET", "POST"])
 def user_access():
