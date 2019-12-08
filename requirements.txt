@@ -3,5 +3,3 @@ Flask
 Flask-Session
 gunicorn
 requests
-flask_session
-wraps
