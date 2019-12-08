@@ -4,7 +4,4 @@ Flask-Session
 gunicorn
 requests
 flask_session
-functools
-tempfile
-werkzeug
-csv
+wraps
