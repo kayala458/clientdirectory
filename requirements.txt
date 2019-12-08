@@ -4,7 +4,6 @@ Flask-Session
 gunicorn
 requests
 flask_session
-os
 functools
 tempfile
 werkzeug
