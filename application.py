@@ -37,8 +37,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///directory.db")
 
-if __name__ == "__application__":
-    app.run(debug=True)
+
 
 
 @app.route("/login", methods=["GET", "POST"])
