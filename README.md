@@ -1,4 +1,4 @@
-*NOTE* To log in without registering, use "kim" as both the username and password.
+*NOTE: To log in without registering, use "kim" as both the username and password.
 
 For this project, I implemented a website called Client Contact Directory. To give some background on my site, I work at a firm called Cambridge Associates which is an investment consulting firm that provides services to numerous clients. Our clientelle consists of endowments, foundations, pensions, and private families that need our help managing their portfolios to ensure they get the highest level of returns on their investments. We host a number of applications that provide essential information when it comes to making investment decisions. Both internal investment analysts and external clients rely on these tools heavily when managing portfolios.
 
